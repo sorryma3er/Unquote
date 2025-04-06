@@ -131,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
 
     void onAnswerSubmission() {
         Question currentQuestion = getCurrentQuestion();
+
+        //check for user having selected an answer or not
+        if (currentQuestion.playerAnswer == -1) {
+            return;
+        }
+
         if (currentQuestion.isCorrect()) {
             totalCorrect = totalCorrect + 1;
         }
